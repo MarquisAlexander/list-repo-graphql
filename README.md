@@ -1,3 +1,14 @@
+<h1>Captura de tela</h1>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/84937379-c490-4da5-a2f3-92b004ac67b3" width="200" />
+  <img src="https://github.com/user-attachments/assets/d6ef18ee-00da-4674-be11-c9b43c960138" width="200" />
+  <img src="https://github.com/user-attachments/assets/dabf88ab-3d60-4767-ae05-97f12bc34705" width="200" />
+  <img src="https://github.com/user-attachments/assets/bfa198ac-4f9d-47e7-96fb-224006b90597" width="200" />
+  <img src="https://github.com/user-attachments/assets/e44fb562-1111-43ae-92bc-167aa3adc644" width="200" />
+</p>
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
