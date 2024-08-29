@@ -158,7 +158,7 @@ const UserProfile = () => {
           {dataUser?.user && <Text style={styles.repoTitle}>Repositórios</Text>}
         </>
       }
-      style={{flex: 1, padding: 20}}
+      style={styles.flatList}
       contentContainerStyle={{paddingBottom: 50}}
       data={dataUser?.user?.repositories}
       keyExtractor={item => item.id}
@@ -168,7 +168,8 @@ const UserProfile = () => {
             CARREGANDO
           </Text>
         ) : (
-          endRepositori && !!dataUser?.user && (
+          endRepositori &&
+          !!dataUser?.user && (
             <Text style={[{...styles.repoTitle, textAlign: 'center'}]}>
               Final dos repositórios
             </Text>
