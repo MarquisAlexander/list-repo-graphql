@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {format} from 'date-fns';
+import {styles} from './styles';
 
 const RepositoryCard = ({item, onPressFav, isFav}) => {
   const [isFavorited, setIsFavorited] = useState(isFav);
+  const [hasLanguage, setHasLanguage] = useState(!!item?.primaryLanguage?.name);
 
   useEffect(() => {
     setIsFavorited(isFav);
@@ -71,7 +73,12 @@ const RepositoryCard = ({item, onPressFav, isFav}) => {
         </TouchableOpacity>
       </View>
       <Text style={styles.repositorieDescription}>{item.description}</Text>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          display: hasLanguage ? 'flex' : 'none',
+        }}>
         <View
           style={{
             height: 16,
@@ -91,43 +98,5 @@ const RepositoryCard = ({item, onPressFav, isFav}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  cardRepositori: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    padding: 15,
-    borderWidth: 1,
-    borderColor: '#E3E6E9', // Cor da borda
-    borderRadius: 8,
-    marginTop: 16,
-  },
-  headerCardRepository: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingBottom: 8,
-  },
-  repositorieTitle: {
-    fontSize: 18,
-    lineHeight: 28,
-    fontFamily: 'Poppins-SemiBold',
-    color: '#616161',
-    maxWidth: '80%',
-  },
-  repositorieDescription: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: 'Poppins-Regular',
-    color: '#8C8C8C',
-    marginBottom: 9,
-  },
-  primaryLanguageText: {
-    fontSize: 12,
-    lineHeight: 18,
-    fontFamily: 'Poppins-Regular',
-    color: '#616161',
-  },
-});
 
 export default RepositoryCard;
