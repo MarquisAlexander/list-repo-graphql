@@ -6,6 +6,7 @@
   <a href="#tecnologias">🛠 Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#informacoes">📚 Informações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#layout">📱 Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#layout">⚙️ Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-como-rodar">💡 Como rodar</a>
 </p>
 
@@ -21,6 +22,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 <h2 id="informacoes">📚 Informações</h2>
 
 Aplicativo para pesquisar usuários do GitHub e visualizar os repositórios pertencentes a cada conta, permitindo que você favorite qualquer repositório na sua lista pessoal.
+
+<h2 id="funcionalidades">⚙️ Funcionalidades</h2>
+
+- Pesquisar usuários do GitHub(Api GraphQL).
+- Visualizar informações e repositórios do usuário pesquisado.
+- Favoritar repositórios
+- Armazenar dados localmente no dispositivo(context e Async Storage).
+- Scroll Infinito(utilizando flatlist).
+- Tratamento de erros contra qualquer crash(react-native-error-boundary).
 
 <h2 id="layout">📱 Layout</h2>
 
