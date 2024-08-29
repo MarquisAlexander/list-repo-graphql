@@ -13,16 +13,37 @@ const RepositoryCard = ({item, onPressFav, isFav}) => {
   let colorCircle;
   switch (item?.primaryLanguage?.name) {
     case 'HTML':
-      colorCircle = 'red';
+      colorCircle = '#e34c26';
       break;
     case 'TypeScript':
-      colorCircle = '#3276C6';
+      colorCircle = '#3178c6';
       break;
     case 'JavaScript':
-      colorCircle = '#F5DA79';
+      colorCircle = '#f1e05a';
       break;
     case 'CSS':
-      colorCircle = 'green';
+      colorCircle = '#563d7c';
+      break;
+    case 'Python':
+      colorCircle = '#3572A5';
+      break;
+    case 'Cpp':
+      colorCircle = '#f34b7d';
+      break;
+    case 'Java':
+      colorCircle = '#b07219';
+      break;
+    case 'PHP':
+      colorCircle = '#4F5D95';
+      break;
+    case 'Kotlin':
+      colorCircle = '#F18E33';
+      break;
+    case 'Objective-C':
+      colorCircle = '#3D7A9D';
+      break;
+    case 'Ruby':
+      colorCircle = '#701516';
       break;
     default:
       colorCircle = 'red';
