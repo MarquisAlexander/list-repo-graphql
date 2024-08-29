@@ -1,8 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const FoundUser = ({dataUser, username, visible}) => {
-  const userNotFound = !dataUser?.user;
+const FoundUser = ({dataUser, visible}) => {
   return (
     <View style={[{...styles.container, display: visible ? 'flex' : 'none'}]}>
         <View style={styles.foundUser}>
@@ -21,44 +20,13 @@ const FoundUser = ({dataUser, username, visible}) => {
             Encontre os repositórios de algum usuário digitando no campo abaixo
           </Text>
         </View>
-      {/* 
-      {userNotFound ? (
-        <>
-          <Text
-            style={[
-              {...styles.userNameText},
-              {display: dataUser?.user ? 'none' : 'flex'},
-            ]}>
-            {`"${username}"`}
-          </Text>
-          <Text
-            style={[
-              {...styles.notFoundUserNameTitle},
-              {display: dataUser?.user ? 'none' : 'flex'},
-            ]}>
-            Nenhum usuário encontrado
-          </Text>
-          <Text
-            style={[
-              {...styles.notFoundUserNameDescription},
-              {display: dataUser?.user ? 'none' : 'flex'},
-            ]}>
-            Verifique se a escrita está correta ou tente novamente
-          </Text>
-        </>
-      ) : null} */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // padding: 20,
     backgroundColor: '#f5f5f5',
-  },
-  foundUser: {
-    // estilos específicos para foundUser
   },
   headerText: {
     fontFamily: 'Poppins-SemiBold',
