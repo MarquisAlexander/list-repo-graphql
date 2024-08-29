@@ -1,4 +1,29 @@
-<h1>Captura de tela</h1>
+<h2 align="center">
+  Plano do projeto.
+</h2> 
+
+<p align="center">
+  <a href="#tecnologias">🛠 Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#informacoes">📚 Informações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#layout">📱 Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-como-rodar">💡 Como rodar</a>
+</p>
+
+<h2 id="tecnologias">🛠 Tecnologias</h2>
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [ReactNative](https://reactnative.dev/)
+  - [React Native Async Storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
+- [GraphQL](https://graphql.org/)
+- [Apollo](https://www.apollographql.com/docs/react/integrations/react-native/)
+
+<h2 id="informacoes">📚 Informações</h2>
+
+Aplicativo para pesquisar usuários do GitHub e visualizar os repositórios pertencentes a cada conta, permitindo que você favorite qualquer repositório na sua lista pessoal.
+
+<h2 id="layout">📱 Layout</h2>
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/84937379-c490-4da5-a2f3-92b004ac67b3" width="200" />
   <img src="https://github.com/user-attachments/assets/d6ef18ee-00da-4674-be11-c9b43c960138" width="200" />
@@ -7,11 +32,19 @@
   <img src="https://github.com/user-attachments/assets/e44fb562-1111-43ae-92bc-167aa3adc644" width="200" />
 </p>
 
+<h2 id="como-rodar">💡 Como rodar</h2>
 
+Antes de mais nada, você precisará de um token do GitHub. Caso não saiba como obtê-lo, siga este guia oficial.
+
+Com o token em mãos, abra o arquivo **src\services\api.js** e substitua **KEY_GITHUB** pelo seu token.
+
+Depois disso, siga o fluxo padrão para executar o projeto.
+
+---
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+## Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
