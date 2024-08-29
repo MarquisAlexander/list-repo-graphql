@@ -6,6 +6,12 @@ import {ApolloProvider} from '@apollo/client';
 import client from './src/services/api';
 import AppRoutes from './src/rotas';
 import DataProvider from './src/context/DataContext';
+import ErrorBoundary from 'react-native-error-boundary';
+import {Fallback} from './src/components/FallbackComponent';
+
+const FallbackComponent = ({error, resetErrorBoundary}) => (
+  <Fallback error={error} resetErrorBoundary={resetErrorBoundary} />
+);
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -18,15 +24,21 @@ function App(): React.JSX.Element {
   return (
     <ApolloProvider client={client}>
       <SafeAreaView style={backgroundStyle}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <DataProvider>
-          <View style={{flex: 1}}>
-            <AppRoutes />
-          </View>
-        </DataProvider>
+        <ErrorBoundary
+          FallbackComponent={FallbackComponent}
+          onError={(error, info) => {
+            console.log('Erro:', error, info);
+          }}>
+          <StatusBar
+            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+            backgroundColor={backgroundStyle.backgroundColor}
+          />
+          <DataProvider>
+            <View style={{flex: 1}}>
+              <AppRoutes />
+            </View>
+          </DataProvider>
+        </ErrorBoundary>
       </SafeAreaView>
     </ApolloProvider>
   );
