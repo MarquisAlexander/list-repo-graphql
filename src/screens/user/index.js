@@ -17,6 +17,7 @@ const UserProfile = () => {
   const [userNotFound, setUserNotFound] = useState(false);
   const [cursor, setCursor] = useState();
   const [foundUser, setFounderUser] = useState(true);
+  const [endRepositori, setEndRepositori] = useState(false);
 
   const {loading, error, data} = useQuery(GET_USER_AND_REPOS, {
     variables: {login: username, first: 10, after: cursor},
@@ -56,6 +57,12 @@ const UserProfile = () => {
           },
         });
       }
+      if (!data?.user?.repositories?.pageInfo?.hasNextPage) {
+        setEndRepositori(true);
+      } else {
+        setEndRepositori(false);
+      }
+
       setUserNotFound(false);
       setOldUsername(username);
     }
@@ -156,10 +163,16 @@ const UserProfile = () => {
       data={dataUser?.user?.repositories}
       keyExtractor={item => item.id}
       ListFooterComponent={
-        loading && (
+        loading ? (
           <Text style={[{...styles.repoTitle, textAlign: 'center'}]}>
             CARREGANDO
           </Text>
+        ) : (
+          endRepositori && !!dataUser?.user && (
+            <Text style={[{...styles.repoTitle, textAlign: 'center'}]}>
+              Final dos repositórios
+            </Text>
+          )
         )
       }
       renderItem={({item}) => (
@@ -169,6 +182,12 @@ const UserProfile = () => {
           isFav={item?.isFavorited}
         />
       )}
+      ListEmptyComponent={() => {
+        if (!!dataUser?.user)
+          <Text style={[{...styles.repoTitle, textAlign: 'center'}]}>
+            Esse usuário não tem repositórios.
+          </Text>;
+      }}
       onEndReached={loadMoreItems}
       onEndReachedThreshold={0.5}
     />
