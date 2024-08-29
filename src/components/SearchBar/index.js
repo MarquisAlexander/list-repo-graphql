@@ -2,7 +2,14 @@ import React from 'react';
 import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const SearchBar = ({value, onChangeText, onSubmitEditing, onPress}) => {
+const SearchBar = ({
+  value,
+  onChangeText,
+  onSubmitEditing,
+  onPressFind,
+  onPressClose,
+  isFoundUser,
+}) => {
   return (
     <View style={styles.searchContainer}>
       <TextInput
@@ -13,8 +20,14 @@ const SearchBar = ({value, onChangeText, onSubmitEditing, onPress}) => {
         onChangeText={onChangeText}
         onSubmitEditing={onSubmitEditing}
       />
-      <TouchableOpacity style={styles.iconContainer} onPress={onPress}>
-        <Icon name="search" size={20} color="#8C8C8C" />
+      <TouchableOpacity
+        style={styles.iconContainer}
+        onPress={!isFoundUser ? onPressFind : onPressClose}>
+        {isFoundUser ? (
+          <Icon name="close" size={20} color="#8C8C8C" />
+        ) : (
+          <Icon name="search" size={20} color="#8C8C8C" />
+        )}
       </TouchableOpacity>
     </View>
   );

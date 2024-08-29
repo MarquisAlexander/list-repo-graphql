@@ -57,6 +57,7 @@ const UserProfile = () => {
         });
       }
       setUserNotFound(false);
+      setOldUsername(username);
     }
   }, [data]);
 
@@ -114,6 +115,12 @@ const UserProfile = () => {
     setUserNotFound(!data?.user);
   };
 
+  function clearSearch() {
+    setDataUser();
+    setFounderUser(true);
+    setUsername('');
+  }
+
   return (
     <FlatList
       ListHeaderComponent={
@@ -126,10 +133,14 @@ const UserProfile = () => {
           <SearchBar
             value={username}
             onSubmitEditing={findUser}
-            onPress={findUser}
+            onPressFind={findUser}
+            onPressClose={clearSearch}
             onChangeText={setUsername}
+            isFoundUser={!!dataUser?.user}
           />
-          {userNotFound ? <NotFoundUser username={username} /> : null}
+          {userNotFound && !loading ? (
+            <NotFoundUser username={username} />
+          ) : null}
           <UserCard
             visibled={!!dataUser?.user}
             name={dataUser?.user?.name}
